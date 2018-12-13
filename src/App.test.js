@@ -43,3 +43,25 @@ it('should intialize a playlist', () => {
     expect(actions.initializePlaylist(playlistId, genre, state, data,thumbnail)).toEqual(initializePlaylist())
 })
 })
+
+describe('actions', () => {
+it('should save playlist data', () => {
+    const data = 'data'
+    const id = '004'
+    const genre= 'Rap';
+
+    const payload = {
+    songs: data,
+    playlistId: id
+    }
+    const type = 'LOAD_PLAYLIST'
+   
+    const saveNewPlaylistData = (id, genre, data) => ({
+    type: type,
+    genre: 'RAP',
+      
+    payload: payload
+    });
+    expect(saveNewPlaylistData(id,genre,data)).toEqual(saveNewPlaylistData())
+})
+})
