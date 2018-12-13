@@ -20,3 +20,26 @@ it('should create an action on page select', () => {
     expect(actions.onPageSelect(payload,type)).toEqual(onPageSelect())
 })
 })
+
+describe('actions', () => {
+it('should intialize a playlist', () => {
+
+    const type = 'ON_PLAYLIST_INIT';
+    const playlistId = '0001';
+    const genre = 'techno';
+    const songCount= 'youtube api';
+    const state = 'active';
+    const data = 'favorites';
+    const thumbnail = 'technoImg.jpg'
+
+    const initializePlaylist = (playlistId, genre, state, data, thumbnail) => ({
+    type: type,
+    playlistId : playlistId,
+    genre: genre,
+    state: state,
+    data: data,
+    thumbnail: thumbnail
+    });
+    expect(actions.initializePlaylist(playlistId, genre, state, data,thumbnail)).toEqual(initializePlaylist())
+})
+})
