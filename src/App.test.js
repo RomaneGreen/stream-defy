@@ -113,3 +113,17 @@ test('takes in state a returns data', () => {
     expect(initializePlaylist(expectedState, action)).toEqual(expectedState);
     });
 });
+
+describe('DEFAULT_STATE', () => {
+test('returns default data when undefined', () => {
+    const action = { type: 'dummy_action' };
+    const expectedState = {
+    showPage: 'browse',
+    cachedPlaylists: {},
+    player: null,
+    };
+
+    expect(initializePlaylist(undefined, action)).toEqual(expectedState);
+});
+});
+
