@@ -105,3 +105,11 @@ it('should save song data', () => {
     expect(saveSongData(id,genre,videoId,channelTitle,duration,viewCount)).toEqual(saveSongData())
 })
 })
+describe('INITIAL_STATE', () => {
+test('takes in state a returns data', () => {
+    const action = { type: 'dummy_action' };
+    const expectedState = { selectedAvatar: 0 };
+
+    expect(initializePlaylist(expectedState, action)).toEqual(expectedState);
+    });
+});
